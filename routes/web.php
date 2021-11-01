@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('index', [PostsController::class, 'index']);
-Route::get('about', [PostsController::class, 'about']);
-Route::get('post', [PostsController::class, 'post']);
-Route::get('contact', [PostsController::class, 'contact']);
+Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
+Route::get('about', [PostsController::class, 'about'])->name('posts.about');
+Route::get('post', [PostsController::class, 'show'])->name('posts.show');
+Route::get('contact', [PostsController::class, 'contact'])->name('posts.contact');

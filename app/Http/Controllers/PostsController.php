@@ -16,7 +16,7 @@ class PostsController extends Controller
         return view('about');
     }
 
-    public function post()
+    public function show()
     {
         return view('post');
     }
