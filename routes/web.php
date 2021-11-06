@@ -51,7 +51,10 @@ Route::get('/', function () {
 
     //Post::destroy(2);
 
-    Post::destroy(3, 5, 7);
+    //Post::destroy(3, 5, 7);
+
+    $allPosts = Post::all();
+    dd($allPosts);
 });
 
 Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
