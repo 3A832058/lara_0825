@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -65,10 +66,19 @@ Route::get('/', function () {
 //    $lastPost = Post::orderBy('id', 'DESC')->first();
 //    dd($lastPost);
 
-    $post=Post::find(6);
+    $post=Post::find(10);
+    echo $post->title.'<br>';
     foreach ($post->comments as $comment){
         echo $comment->content.'<br>';
     }
+
+    $comment=Comment::find(5);
+    echo $comment->content.'<br>';
+    $post = $comment->post_id;
+    echo $post->id.'<br>';
+    echo $post-title.'<br>';
+    echo $post->content.'<br>';
+
 });
 
 Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
